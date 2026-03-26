@@ -1,0 +1,245 @@
+:root {
+    --brand: #4f46e5;
+    --brand-dark: #0f172a;
+    --text-slate: #475569;
+}
+
+body { font-family: 'Inter', sans-serif; margin: 0; background: #ffffff; color: var(--brand-dark); }
+
+/* Navbar */
+.navbar { background: #fff; padding: 1rem 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; }
+.logo-wrapper { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.logo-icon { background: var(--brand); color: white; padding: 8px 12px; border-radius: 10px; font-weight: 800; }
+.logo-text { font-weight: 800; font-size: 1.3rem; }
+.admin-link { text-decoration: none; font-size: 0.85rem; color: var(--text-slate); padding: 10px 20px; border-radius: 50px; border: 1px solid #e2e8f0; }
+
+/* Hero Slider */
+.hero-slider { position: relative; height: 50vh; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
+.slide-image { position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease; }
+.slide-image.active { opacity: 1; }
+.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.45); z-index: 2; }
+.hero-content { position: relative; z-index: 10; text-align: center; color: white; }
+.hero-sub { text-transform: uppercase; font-size: 0.8rem; font-weight: 700; color: #818cf8; letter-spacing: 0.1em; }
+.hero-content h1 { font-size: 3.5rem; margin: 10px 0; font-weight: 800; }
+
+/* Floating Search */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.floating-search {
+    background: white; padding: 8px; border-radius: 100px; display: flex;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08); max-width: 850px; 
+    margin: -40px auto 40px auto; position: relative; z-index: 100;
+}
+.floating-search input { flex: 1; border: none; padding: 15px 30px; outline: none; font-size: 1rem; border-radius: 100px; }
+.floating-search button { background: var(--brand); color: white; border: none; padding: 0 40px; border-radius: 100px; font-weight: 700; cursor: pointer; }
+
+/* Info Section (SDU Style) */
+.info-section { display: flex; gap: 80px; margin: 60px 0; padding-bottom: 40px; border-bottom: 1px solid #f1f5f9; }
+.program-links { flex: 1.2; }
+.program-links h2 { font-size: 2.2rem; margin-bottom: 25px; font-weight: 800; }
+.program-links ul { list-style: none; padding: 0; }
+.program-links li { border-bottom: 1px solid #f1f5f9; }
+.program-links a { display: block; padding: 18px 0; text-decoration: none; color: #334155; font-weight: 500; font-size: 1.1rem; transition: 0.3s; }
+.program-links a span { color: var(--brand); margin-right: 15px; font-weight: bold; }
+.program-links a:hover { padding-left: 10px; color: var(--brand); }
+
+.campus-info { flex: 1; }
+.campus-info .label { text-transform: uppercase; font-size: 0.75rem; font-weight: 800; border-bottom: 2px solid #000; padding-bottom: 3px; display: inline-block; }
+.campus-info h3 { font-size: 1.8rem; margin: 20px 0; font-weight: 700; }
+.campus-info p { color: var(--text-slate); line-height: 1.7; margin-bottom: 25px; }
+.read-more { text-decoration: none; color: #000; font-weight: 700; }
+
+/* Results Grid (Appears on click) */
+.results-area { animation: fadeIn 0.6s ease; margin-bottom: 80px; }
+.results-header { display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 20px 30px; border-radius: 15px; margin-bottom: 30px; }
+.clear-btn { color: #ef4444; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.card { background: white; padding: 40px; border-radius: 24px; border: 1px solid #f1f5f9; text-decoration: none; color: inherit; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+.card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+.card-badge { color: var(--brand); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 10px; display: block; }
+.view-more { margin-top: 25px; color: var(--brand); font-weight: 700; display: block; text-decoration: none; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-icon {
+    background: #4f46e5; /* The brand purple/blue */
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* Matches the rounded square in your screenshot */
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+/* This is what fixes the "weird" alignment */
+.logo-text-group {
+    display: flex;
+    flex-direction: column; /* Stacks the two spans vertically */
+    line-height: 1.1;
+}
+
+.logo-main {
+    font-weight: 800; /* Bold 'Nexus Institute' */
+    font-size: 1.2rem;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+.logo-sub {
+    font-size: 0.65rem; /* Smaller sub-text */
+    font-weight: 700;
+    color: #475569; /* Slate grey color */
+    letter-spacing: 0.12em;
+    text-transform: uppercase; /* Ensures 'OF TECHNOLOGY' is capitalized */
+}
+
+
+
+
+/* Fix the Logo Stacking */
+.logo-text-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.logo-main {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+}
+
+.logo-sub {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+/* Match the Card Shadow & Radius to the Search Page */
+.card {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blurs the background behind the card */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    padding: 35px;
+    /* ... keep your other card styles ... */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.1); /* Soft purple glow */
+    border-color: var(--brand);
+}
+
+.card-icon {
+    font-size: 28px; /* Slightly larger for emphasis */
+    background: #eef2ff; /* Brand soft blue */
+    color: var(--brand);
+}
+
+
+
+.register-interest-btn {
+    /* 1. Reset link styles */
+    display: inline-block;
+    text-decoration: none !important;
+    
+    /* 2. Sizing and Spacing */
+    padding: 14px 32px;
+    border-radius: 12px;
+    margin-top: 20px;
+    
+    /* 3. Colors and Typography */
+    background: var(--brand, #4f46e5);
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    
+    /* 4. Smooth Interaction */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    cursor: pointer;
+    border: none;
+}
+
+.register-interest-btn:hover {
+    /* Slight lift and darker purple */
+    background: #4338ca;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.35);
+}
+
+.register-interest-btn:active {
+    /* Pressed effect */
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(79, 70, 229, 0.2);
+}
+
+
+
+.profile-section {
+    margin-top: 50px;
+    padding: 40px;
+    background: white;
+    border-radius: 30px;
+    border: 1px solid #f1f5f9;
+}
+
+.leader-card {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 25px;
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 20px;
+}
+
+.avatar-circle {
+    width: 80px;
+    height: 80px;
+    background: var(--brand); /* #4f46e5 */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.job-tag {
+    display: inline-block;
+    color: var(--brand);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.bio-text {
+    line-height: 1.6;
+    color: #64748b;
+    font-size: 0.95rem;
+}
